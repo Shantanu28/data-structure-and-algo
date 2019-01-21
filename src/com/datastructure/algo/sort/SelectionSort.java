@@ -14,17 +14,15 @@ public class SelectionSort {
 
     private static void selectionSortAlgo(int[] intArray) {
         for (int lastUnsortedIndex = intArray.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
-            int largest = intArray[0];
-            int largestEleIndex = 0;
+            int largest = 0;
 
-            for (int index = 1; index < lastUnsortedIndex; index++) {
-                if (intArray[index] > largest) {
-                    largest = intArray[index];
-                    largestEleIndex = index;
+            for (int index = 1; index <= lastUnsortedIndex; index++) {
+                if (intArray[index] > intArray[largest]) {
+                    largest = index;
                 }
             }
 
-            swap(intArray, largestEleIndex, lastUnsortedIndex);
+            swap(intArray, largest, lastUnsortedIndex);
         }
     }
 
